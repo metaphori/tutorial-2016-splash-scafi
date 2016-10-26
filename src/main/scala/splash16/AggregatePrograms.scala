@@ -60,4 +60,16 @@ object AggregatePrograms {
     def main = gradient(isSource)
   }
 
+  def program10_channel = new AggregateProgram with AggregateAPI {
+    val width = 0.4
+
+    def main = {
+      val belongsToChannel = branch(isObstacle){ false }{ channel(isSource, isDest, width) }
+      if(isSource) "START"
+      else if(isDest) "END  "
+      else if(isObstacle) "|||||"
+      else if(belongsToChannel) "  x  "
+      else "    "
+    }
+  }
 }
