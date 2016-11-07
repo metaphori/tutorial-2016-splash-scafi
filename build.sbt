@@ -1,3 +1,5 @@
+scalaVersion := "2.11.8"
+
 // Resolvers
 resolvers += Resolver.sonatypeRepo("snapshots")
 resolvers += Resolver.typesafeRepo("releases")
